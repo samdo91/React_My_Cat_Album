@@ -1,7 +1,10 @@
+import React, { useContext } from "react";
 import { apiList } from "../api/api";
+import { catStates } from "../userSrore/userSrore";
 
-function Breadcrumb(props) {
-  const { catState, setCatState } = props;
+function Breadcrumb() {
+  const context = useContext(catStates);
+  const { catState, setCatState } = context;
 
   const handleBackRoot = async () => {
     const list = await apiList();

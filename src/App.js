@@ -1,11 +1,14 @@
 import "./App.css";
 import MainPage from "./Comp/mainPage";
+import UserSrore from "./Comp/userSrore/userSrore";
 
 function App() {
   return (
-    <div className="App">
-      <MainPage />
-    </div>
+    <UserSrore>
+      <div className="App">
+        <MainPage />
+      </div>
+    </UserSrore>
   );
 }
 

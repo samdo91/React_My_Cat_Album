@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import Breadcrumb from "./breadcrumb/breadcrumb";
 import Node from "./nodo/nods";
 import { apiList } from "./api/api";
 import ImgPage from "./imgPage/imgPage";
 import LoadingPage from "./Loading/loadingPage";
-import { loadingFuntion } from "./Loading/loadingFuntion";
+import { catStates } from "./userSrore/userSrore";
 
 function MainPage() {
-  const [catState, setCatState] = useState({
-    isRoots: false,
-    depth: [],
-    nodes: [],
-    imgstate: null,
-    isLoading: false,
-  });
+  const context = useContext(catStates);
+  const { catState, setCatState } = context;
 
   const loadingFuntion = (loadingState) => {
     setCatState({

@@ -1,10 +1,13 @@
+import React, { useContext } from "react";
 import backArrow from "../../assets/prev.png";
 import flieIcon from "../../assets/file.png";
 import directoryIcon from "../../assets/directory.png";
 import { request, apiList } from "../api/api";
+import { catStates } from "../userSrore/userSrore";
 
-function Node(props) {
-  const { catState, setCatState } = props;
+function Node() {
+  const context = useContext(catStates);
+  const { catState, setCatState } = context;
 
   const loadingFuntion = (loadingState) => {
     setCatState({

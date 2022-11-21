@@ -1,7 +1,10 @@
 import catMig from "../../assets/nyan-cat.gif";
+import React, { useContext } from "react";
+import { catStates } from "../userSrore/userSrore";
 
-function LoadingPage(props) {
-  const { catState } = props;
+function LoadingPage() {
+  const context = useContext(catStates);
+  const { catState } = context;
 
   return (
     <div>
