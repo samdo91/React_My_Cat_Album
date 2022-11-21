@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React, { useContext } from "react";
 import { apiList } from "../api/api";
 import { catStates } from "../userSrore/userSrore";
@@ -39,8 +41,30 @@ function Breadcrumb() {
   };
 
   return (
-    <nav className="Breadcrumb">
-      <div className="nav-item" onClick={handleBackRoot}>
+    <nav
+      className="Breadcrumb"
+      css={css`
+        height: 62px;
+        padding: 16px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        flex-direction: row;
+        > div {
+          padding: 4px;
+        }
+      `}
+    >
+      <div
+        className="nav-item"
+        css={css`
+          padding: 4px;
+
+          content: " -";
+
+          content: "";
+        `}
+        onClick={handleBackRoot}
+      >
         Root
       </div>
       {catState.depth.length > 0

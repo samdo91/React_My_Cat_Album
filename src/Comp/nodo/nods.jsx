@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React, { useContext } from "react";
 import backArrow from "../../assets/prev.png";
 import flieIcon from "../../assets/file.png";
@@ -55,6 +57,16 @@ function Node() {
         className="Node"
         data-id={node.id}
         onClick={handleOnClick}
+        css={css`
+          width: 140px;
+          min-height: 150px;
+          padding: 12px;
+          margin: 8px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          word-break: keep-all;
+        `}
       >
         <img data-id={node.id} src={iconPath} />
         <div data-id={node.id}> {node.name}</div>
@@ -87,7 +99,15 @@ function Node() {
   };
 
   return (
-    <ul className="Nodes">
+    <ul
+      className="Nodes"
+      css={css`
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      `}
+    >
       {catState.isRoots ? (
         <div className="node" id="backArrow" onClick={handlebackArrow}>
           <img src={backArrow} />
